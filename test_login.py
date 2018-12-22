@@ -7,24 +7,24 @@ from pages.login_page import LoginPage
 
 
 class LoginCase(unittest.TestCase):
+    '''
+    第三层
+    使用单元测试框架对业务逻辑进行测试
+    '''
 
     def setUp(self):
         # 实例化webdriver , 俗称：“打开浏览器”
         self.dr = webdriver.Chrome()
-        # 设置全局元素定位等待时间 10 秒
-        self.dr.implicitly_wait(10)
-        # 浏览器导航到TAPD登录页
-        self.dr.get('https://www.tapd.cn/cloud_logins/login')
 
     def tearDown(self):
         # 关闭浏览器
         self.dr.quit()
 
     def test_login_success(self):
-        username = '请输入你的tapd用户名'
-        password = '请输入你的tapd密码'
+        username = '请输入你的TAPD账号'
+        password = '请输入你的TAPD密码'
         # 调用封装好的登陆方法
-        login_page = LoginPage(self.dr)
+        login_page = LoginPage(self.dr, '/cloud_logins/login')
         work_page = login_page.login(username, password)
 
         # 获取 工作台 “我的待办” 文本信息
