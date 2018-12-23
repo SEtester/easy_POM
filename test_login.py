@@ -1,9 +1,9 @@
+
+
 # encoding:utf8
-
-
 from selenium import webdriver
-import unittest
 from pages.login_page import LoginPage
+import unittest
 
 
 class LoginCase(unittest.TestCase):
@@ -24,7 +24,7 @@ class LoginCase(unittest.TestCase):
         username = '请输入你的TAPD账号'
         password = '请输入你的TAPD密码'
         # 调用封装好的登陆方法
-        login_page = LoginPage(self.dr, '/cloud_logins/login')
+        login_page = LoginPage(driver=self.dr, path='/cloud_logins/login')
         work_page = login_page.login(username, password)
 
         # 获取 工作台 “我的待办” 文本信息
