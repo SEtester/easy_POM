@@ -1,5 +1,3 @@
-
-
 # encoding:utf8
 from selenium import webdriver
 from pages.login_page import LoginPage

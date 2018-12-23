@@ -1,7 +1,3 @@
-
-
-
-
 # encoding:utf8
 
 class BasePage():
@@ -29,7 +25,7 @@ class BasePage():
         return self.driver.find_element_by_xpath(xpath)
 
     def load_page(self, path=None):
-        #如果不传入path,则不打开浏览器
+        # 如果不传入path,则不打开浏览器
         if path == None:
             url = None
         else:

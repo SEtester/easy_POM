@@ -2,6 +2,7 @@
 from .base_page import BasePage
 from .worktable_to_do_page import WorkToDo
 
+
 class LoginPage(BasePage):
     '''
     第二层：
@@ -17,6 +18,7 @@ class LoginPage(BasePage):
     - 当你的用例设计页面跳转时，例如登陆操作，登陆完成后跳转首页，
     当页面发生“跳转”，封装的业务逻辑需要返回（return）对应的页面对象的实例
     '''
+
     # 登陆输入框定位（定位分离）
     def form_username(self):
         return self.by_xpath('//input[@id="username"]')
@@ -45,5 +47,3 @@ class LoginPage(BasePage):
         # 当页面发生“跳转”，封装的业务逻辑需要返回（return）对应的页面对象的实例
         # 返回页面对象实例 （实现页面跳转）
         return WorkToDo(self.driver)
-
-

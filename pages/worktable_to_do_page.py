@@ -1,5 +1,3 @@
-
-
 # encoding:utf8
 from .base_page import BasePage
 
@@ -19,4 +17,3 @@ class WorkToDo(BasePage):
     # 获取我的待办文本信息 （操作元素动作分离）
     def worktable_undo_text(self):
         return self.worktable_undo().text
-
